@@ -57,7 +57,7 @@
 		<article  class="post clearfix">
 
 			<header  >
-				<h1 class="post-title"><a href="#">AlumnoNombre.Apellido</a></h1>
+				<h1 class="post-title"><a id="actual" href="#">AlumnoNombre.Apellido</a></h1>
 				<p class="post-meta"><time class="post-date" datetime="2011-05-08" pubdate>2015</time> <em>en</em> <a href="#">UTN FRA</a></p>
 			</header>
 			<hr>
