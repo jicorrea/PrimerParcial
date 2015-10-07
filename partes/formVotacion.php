@@ -13,7 +13,7 @@ if(isset($_SESSION['registrado'])){  ?>
         <input type="text"  id="provincia" title="Escriba una pronvicia" class="form-control" placeholder="Provincia" required="" autofocus="">
        
 
-        <select name="candidato" class="form-control" required="" autofocus="">
+        <select name="candidato" id="candidato" class="form-control" required="" autofocus="">
           <option value="scioli">Scioli</option>
           <option value="Macri">Macri</option>
           <option value="Massa">Massa</option>
@@ -22,8 +22,8 @@ if(isset($_SESSION['registrado'])){  ?>
         <br>
         <label for="sexo" class="sr-only">Sexo</label>
         <!--input type="number"   min="1900" title="Un año entre 1900 y hoy"  max="2099" id="anio" class="form-control" placeholder="año" required="" autofocus=""-->
-        <input type="radio" name="sexo"  value="Femenino" required="" autofocus="">Femenino
-        <input type="radio" name="sexo"  value="Masculino" required="" autofocus="">  Masculino
+        <input type="radio" name="sexo" id="sexo"  value="Femenino" required="" autofocus="">Femenino
+        <input type="radio" name="sexo" id="sexo"  value="Masculino" required="" autofocus="">  Masculino
 
 
        <input readonly   type="hidden"    id="idVoto" class="form-control" >
