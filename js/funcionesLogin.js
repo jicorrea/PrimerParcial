@@ -25,8 +25,8 @@ function validarLogin()
 			}
 	});
 	funcionAjax.fail(function(retorno){
-		$("#botonesABM").html(":(");
-		$("#informe").html(retorno.responseText);	
+		//$("#botonesABM").html(":(");
+		//$("#informe").html(retorno.responseText);	
 	});
 	
 }
@@ -39,8 +39,8 @@ function deslogear()
 	funcionAjax.done(function(retorno){
 			MostarBotones();
 			MostarLogin();
-			$("#actual").html("AlumnoNombre.Apellido");
-			$("#usuario").val("Sin usuario.");
+			//$("#actual").html("AlumnoNombre.Apellido");
+			
 			$("#BotonLogin").html("Login<br>-Sesión-");
 			$("#BotonLogin").removeClass("btn-danger");
 			$("#BotonLogin").addClass("btn-primary");

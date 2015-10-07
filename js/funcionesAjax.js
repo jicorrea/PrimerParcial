@@ -20,3 +20,34 @@ function MostarLogin()
 
 	});
 }
+
+function MostarVotar()
+{
+	var funcionAjax = $.ajax({
+								url:"nexo.php",
+								type:"post",
+								data:{queHacer:"MostarVotar"}
+								});
+
+	funcionAjax.done(function(retorno){
+										$("#principal").html(retorno);
+										});
+	funcionAjax.fail(function(retorno){
+										//muestro el error
+										});
+}
+
+function GrabarVoto()
+{
+	var varDni = $_SESSION['registrado'];
+	var varProvincia = $("#provincia").val();
+	var varCandidato = $("#candidato").val();
+	var varSexo = $("#sexo").val();
+
+	var funcionAjax = $.ajax({
+		url:"nexo.php",
+		data:{queHacer:"GrabarVoto",dni:varDni,provincia:varProvincia,candidato:varCandidato,sexo:varSexo}
+	});
+
+
+} 

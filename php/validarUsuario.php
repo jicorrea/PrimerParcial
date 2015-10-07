@@ -5,7 +5,7 @@ $usuario=$_POST['dniLogin'];
 
 $retorno;
 
-if($usuario>=10 && $usuario<=100)
+if($usuario>=1000000 && $usuario<=99000000)
 {			
 	//if($recordar=="true")
 	//{
