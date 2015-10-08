@@ -5,7 +5,8 @@ $usuario=$_POST['dniLogin'];
 
 $retorno;
 
-if($usuario>=1000000 && $usuario<=99000000)
+
+if($usuario>=1000000 && $usuario<=99000000 &&is_numeric($usuario))
 {			
 	//if($recordar=="true")
 	//{
@@ -22,7 +23,7 @@ if($usuario>=1000000 && $usuario<=99000000)
 	
 }else
 {
-	$retorno= "No-esta";
+	$retorno= "Ingrese DnI nuevamente";
 }
 
 echo $retorno;

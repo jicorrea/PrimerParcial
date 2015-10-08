@@ -27,14 +27,15 @@ if(isset($_SESSION['registrado'])) {  ?>
 
 
        <input readonly   type="hidden"    id="idVoto" class="form-control" >
+       
        <input readonly   type="hidden"    id="dni" class="form-control" value ="<?php echo $_SESSION['registrado'];?>">
 
-        <button  class="btn btn-lg btn-success btn-block" type="submit"><span class="glyphicon-floppy-save">&nbsp;&nbsp;</span>Votar </button>
+        <button  class="btn btn-lg btn-success btn-block" type="submit"><span class="glyphicon glyphicon-floppy-save">&nbsp;&nbsp;</span>Votar </button>
      
       </form>
 
     </div> <!-- /container -->
 
-  <?php }else{    echo"<h3>usted no esta logeado o ya voto. </h3>";?>         
+  <?php }else{    echo"<h3>usted no esta logeado. </h3>";?>         
    
   <?php  }  ?>

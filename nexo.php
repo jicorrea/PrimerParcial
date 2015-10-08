@@ -14,25 +14,36 @@ switch ($queHago) {
 	case 'MostarVotar':
 			include("partes/formVotacion.php");
 		break;
+	case 'Mostartabla':
+			include("partes/formTabla.php");
+		break;
 	case 'GrabarVoto':
 
 			$var = new voto();
-
-			if($var->validarDni($_POST['dni']) == null)
+			//$var->idVoto = $_POST['idVoto'];	
+			if($_POST['idVoto'] == "")
 			{
+				$var->dni = $_POST['idVoto'];
 				$var->dni = $_POST['dni'];
 				$var->provincia = $_POST['provincia'];
 				$var->candidato = $_POST['candidato'];
 				$var->sexo = $_POST['sexo'];
 				$devuelve = $var->InsertarVoto();				
-				echo "<h1>Voto exitoso.</h1>"; 	
+				//echo "<h1>Voto exitoso.</h1>"; 
+				//include("php/deslogearUsuario.php");
+
 			}
 			else
 			{
-				echo "<h1>Usted ya voto.</h1>";				
-			}
-	
+				//faltaModificar
 				
+			}			
+		break;
+			case 'TraerVoto':
+			$var = new voto();
+			$var1 = $var->validarDni($_POST['idVoto']);		
+			
+			echo json_encode($var1) ;
 		break;				
 	default:
 		# code...
