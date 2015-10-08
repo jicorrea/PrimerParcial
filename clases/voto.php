@@ -22,7 +22,7 @@ class voto
   public function InsertarVoto()
      {
                 $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-                $consulta =$objetoAccesoDato->RetornarConsulta("INSERT into votos (dni,provincia,candidato,sexo)values(:dni,:provincia,:candidato,:sexo");
+                $consulta =$objetoAccesoDato->RetornarConsulta("INSERT INTO votos (dni,provincia,candidato,sexo)values(:dni, :provincia, :candidato, :sexo)");
                 $consulta->bindValue(':dni',$this->dni, PDO::PARAM_INT);
                 $consulta->bindValue(':provincia', $this->provincia, PDO::PARAM_STR);
                 $consulta->bindValue(':candidato', $this->candidato, PDO::PARAM_STR);
@@ -34,9 +34,11 @@ class voto
      public function validarDni($dni)
      {
             $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-            $consulta =$objetoAccesoDato->RetornarConsulta("select * from votos where dni=$dni");
-            $consulta->execute();         
-
+            $consulta =$objetoAccesoDato->RetornarConsulta("SELECT * from votos where dni= :dni");
+    $consulta->bindValue(':dni', $dni, PDO::PARAM_STR);
+    $consulta->execute();
+    $provBuscado= $consulta->fetchObject('voto');
+    return $provBuscado;
      }
    
 }

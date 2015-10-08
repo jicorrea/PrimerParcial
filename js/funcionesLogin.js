@@ -39,7 +39,7 @@ function deslogear()
 	funcionAjax.done(function(retorno){
 			MostarBotones();
 			MostarLogin();
-			//$("#actual").html("AlumnoNombre.Apellido");
+			$("#actual").html("");
 			
 			$("#BotonLogin").html("Login<br>-Sesión-");
 			$("#BotonLogin").removeClass("btn-danger");

@@ -15,13 +15,24 @@ switch ($queHago) {
 			include("partes/formVotacion.php");
 		break;
 	case 'GrabarVoto':
+
 			$var = new voto();
-			$var->dni = $_POST['dni'];
-			$var->provincia = $_POST['provincia'];
-			$var->candidato = $_POST['candidato'];
-			$var->sexo = $_POST['sexo'];
-			$devuelve=$var->InsertarVoto();
-			echo $devuelve;	
+
+			if($var->validarDni($_POST['dni']) == null)
+			{
+				$var->dni = $_POST['dni'];
+				$var->provincia = $_POST['provincia'];
+				$var->candidato = $_POST['candidato'];
+				$var->sexo = $_POST['sexo'];
+				$devuelve = $var->InsertarVoto();				
+				echo "<h1>Voto exitoso.</h1>"; 	
+			}
+			else
+			{
+				echo "<h1>Usted ya voto.</h1>";				
+			}
+	
+				
 		break;				
 	default:
 		# code...

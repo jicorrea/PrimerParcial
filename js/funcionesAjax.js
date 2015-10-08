@@ -39,15 +39,22 @@ function MostarVotar()
 
 function GrabarVoto()
 {
-	var varDni = $_SESSION['registrado'];
+	var varDni = $("#dni").val();
 	var varProvincia = $("#provincia").val();
 	var varCandidato = $("#candidato").val();
 	var varSexo = $("#sexo").val();
 
 	var funcionAjax = $.ajax({
 		url:"nexo.php",
+		type:"post",
 		data:{queHacer:"GrabarVoto",dni:varDni,provincia:varProvincia,candidato:varCandidato,sexo:varSexo}
 	});
 
+	funcionAjax.done(function(retorno){
+										$("#principal").html(retorno);
+										});
+	funcionAjax.fail(function(retorno){
+										//muestro el error
+										});
 
 } 
