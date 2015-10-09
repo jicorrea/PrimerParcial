@@ -23,9 +23,11 @@ switch ($queHago) {
 			//$var->idVoto = $_POST['idVoto'];	
 			if($_POST['idVoto'] == "")
 			{
-				$var->dni = $_POST['idVoto'];
+				//$var->idVoto = $_POST['idVoto'];
 				$var->dni = $_POST['dni'];
 				$var->provincia = $_POST['provincia'];
+				$var->localidad = $_POST['localidad'];
+				$var->direccion = $_POST['direccion'];								
 				$var->candidato = $_POST['candidato'];
 				$var->sexo = $_POST['sexo'];
 				$devuelve = $var->InsertarVoto();				
@@ -35,7 +37,14 @@ switch ($queHago) {
 			}
 			else
 			{
-				//faltaModificar
+				$var->idVoto = $_POST['idVoto'];
+				//$var->dni = $_POST['dni'];
+				$var->provincia = $_POST['provincia'];
+				$var->localidad = $_POST['localidad'];
+				$var->direccion = $_POST['direccion'];				
+				$var->candidato = $_POST['candidato'];
+				$var->sexo = $_POST['sexo'];
+				$var->ModificarVoto();
 				
 			}			
 		break;
@@ -44,7 +53,12 @@ switch ($queHago) {
 			$var1 = $var->validarDni($_POST['idVoto']);		
 			
 			echo json_encode($var1) ;
-		break;				
+		break;		
+			case 'EliminarVoto':
+			voto::eliminarVoto($_POST['idVoto']);
+					
+		
+		break;		
 	default:
 		# code...
 		break;

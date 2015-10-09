@@ -21,6 +21,7 @@
 <script type="text/javascript" src="js/funcionesAjax.js"></script>
 <script type="text/javascript" src="js/funcionesLogin.js"></script>
 <script type="text/javascript" src="js/funcionesABM.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
 
 </head>
 
@@ -52,11 +53,11 @@
 	</header>
 	<!-- /#header -->
 	
-	<div id="content" >
+	<div id="content">
 
 		<article  class="post clearfix">
 
-			<header  >
+			<header>
 				<h1 class="post-title"><a id="actual" href="#"></a></h1>
 				<p class="post-meta"><time class="post-date" datetime="2011-05-08" pubdate>2015</time> <em>en</em> <a href="#">UTN FRA</a></p>
 			</header>

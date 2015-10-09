@@ -18,7 +18,7 @@ smaller than 980
 	#sidebar {
 		width: 30%;
 	}
-	#sidebar .widget {
+	#sidebar.widget {
 		padding: 8% 7%;
 		margin-bottom: 10px;
 	}

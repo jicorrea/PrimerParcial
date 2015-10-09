@@ -9,10 +9,11 @@ if(isset($_SESSION['registrado']))
 	echo "<h2>DNI: ". $_SESSION['registrado']."</h2>";
 
  ?>
+<div id="formTabla" class="container">
 <table class="table"  style=" background-color: beige;">
 	<thead>
 		<tr>
-			<th>Editar</th><th>Borrar</th><th>Dni</th><th>Candidato</th><th>Provincia</th><th>Sexo</th>
+			<th>Editar</th><th>Borrar</th><th>Dni</th><th>Candidato</th><th>Provincia</th><th>Localidad</th><th>Direccion</th><th>Sexo</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -22,17 +23,19 @@ if(isset($_SESSION['registrado']))
 foreach ($arrayDeVotos as $voto) {
 	echo"<tr>
 			<td><a onclick='EditarVoto($voto->idVoto)' class='btn btn-warning'> <span class='glyphicon glyphicon-pencil'>&nbsp;</span>Editar</a></td>
-			<td><a onclick='BorrarVoto($voto->idVoto)' class='btn btn-danger'>   <span class='glyphicon glyphicon-trash'>&nbsp;</span>  Borrar</a></td>
+			<td><a onclick='EliminarVoto($voto->idVoto)' class='btn btn-danger'>   <span class='glyphicon glyphicon-trash'>&nbsp;</span>  Borrar</a></td>
 			<td>$voto->dni</td>
 			<td>$voto->candidato</td>
 			<td>$voto->provincia</td>
+			<td>$voto->localidad</td>
+			<td>$voto->direccion</td>						
 			<td>$voto->sexo</td>
 		</tr>   ";
 }
 		 ?>
 	</tbody>
 </table>
-
+</div>
 <?php 	}else	{
 		echo "<h4 class='widgettitle'>No estas registrado</h4>";
 	}
