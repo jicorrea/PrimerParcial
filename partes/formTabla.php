@@ -13,7 +13,7 @@ if(isset($_SESSION['registrado']))
 <table class="table"  style=" background-color: beige;">
 	<thead>
 		<tr>
-			<th>Editar</th><th>Borrar</th><th>Dni</th><th>Candidato</th><th>Provincia</th><th>Localidad</th><th>Direccion</th><th>Sexo</th>
+			<th>Editar</th><th>Borrar</th><th>Dni</th><th>Candidato</th><th>Provincia</th><th>Localidad</th><th>Direccion</th><th>Sexo</th><th>Mapa</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -21,6 +21,7 @@ if(isset($_SESSION['registrado']))
 		<?php 
 
 foreach ($arrayDeVotos as $voto) {
+	$p = '"'.$voto->provincia. '"'.',"'.$voto->localidad. '"'.',"'.$voto->direccion. '"'.',"'.$voto->idVoto. '"';
 	echo"<tr>
 			<td><a onclick='EditarVoto($voto->idVoto)' class='btn btn-warning'> <span class='glyphicon glyphicon-pencil'>&nbsp;</span>Editar</a></td>
 			<td><a onclick='EliminarVoto($voto->idVoto)' class='btn btn-danger'>   <span class='glyphicon glyphicon-trash'>&nbsp;</span>  Borrar</a></td>
@@ -30,6 +31,7 @@ foreach ($arrayDeVotos as $voto) {
 			<td>$voto->localidad</td>
 			<td>$voto->direccion</td>						
 			<td>$voto->sexo</td>
+			<td><a onclick='VerEnMapa($p)' class='btn btn-success btn-block'><span class='glyphicon glyphicon-search'>&nbsp;</span>Ver Mapa</a></td>
 		</tr>   ";
 }
 		 ?>

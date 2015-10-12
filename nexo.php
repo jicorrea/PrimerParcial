@@ -8,6 +8,9 @@ $queHago=$_POST['queHacer'];
 
 switch ($queHago) {
 
+	case 'VerEnMapa':
+			include("partes/formMapa.php");
+		break;
 	case 'MostarLogin':
 			include("partes/formIngreso.php");
 		break;

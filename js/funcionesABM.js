@@ -63,6 +63,8 @@ function EliminarVoto(idParametro)
 
 function EditarVoto(idParametro)
 {
+	MostarVotar();
+	
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
@@ -100,5 +102,5 @@ function EditarVoto(idParametro)
 		$("#informe").html(retorno.responseText);	
 	});	
 
-	MostarVotar();
+	
 }
